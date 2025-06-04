@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Animated Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-texture"></div>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="site-title"><a href="/" class="site-title-link">My Animated Blog</a></h1>
+            <nav class="main-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section animate-on-load">
+            <div class="container">
+                <h2 class="hero-title">Welcome to My Creative Corner</h2>
+                <p class="hero-subtitle">Exploring web development, design, and beyond with passion.</p>
+                <a href="#blog-posts" class="scroll-down-button">Explore Posts &#8595;</a>
+            </div>
+        </section>
+
+        <section id="blog-posts" class="blog-posts-list active-section">
+            <div class="container">
+                <h2 class="section-heading animate-on-scroll">Latest Articles</h2>
+                <button id="create-post-button" class="create-post-button animate-on-scroll">
+                    Create New Post <span class="icon">+</span>
+                </button>
+                <div id="posts-container" class="posts-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="single-post-view" class="single-post-section hidden-section">
+            <div class="container">
+                <button id="back-to-posts" class="back-button animate-on-scroll">&larr; Back to all posts</button>
+                <article class="post-detail-card animate-on-scroll">
+                    <h2 id="post-detail-title" class="post-detail-title"></h2>
+                    <div class="post-meta">
+                        <span id="post-detail-author" class="post-author"></span> |
+                        <time id="post-detail-date" class="post-date"></time>
+                    </div>
+                    <div id="post-detail-content" class="post-content">
+                        </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="create-post-section" class="create-post-section hidden-section">
+            <div class="container">
+                <button id="back-from-create" class="back-button animate-on-scroll">&larr; Back to all posts</button>
+                <h2 class="section-heading animate-on-scroll">Create New Post</h2>
+                <form id="new-post-form" class="new-post-form animate-on-scroll">
+                    <div class="form-group">
+                        <label for="post-title">Title:</label>
+                        <input type="text" id="post-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-author">Author:</label>
+                        <input type="text" id="post-author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-excerpt">Excerpt (Short Summary):</label>
+                        <textarea id="post-excerpt" name="excerpt" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-content">Content (HTML allowed):</label>
+                        <textarea id="post-content" name="content" rows="15" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-new-post-button">Publish Post</button>
+                    <p id="form-message" class="form-message"></p>
+                </form>
+            </div>
+        </section>
+
+
+        <section id="about" class="about-section hidden-section">
+            <div class="container">
+                <h2 class="section-heading animate-on-scroll">About Me</h2>
+                <p class="animate-on-scroll">Hi there! I'm a passionate web developer and designer. This blog is my space to share insights, tutorials, and thoughts on the ever-evolving world of technology. I love creating beautiful and functional web experiences.</p>
+                <p class="animate-on-scroll">My journey in tech began with a curiosity for how things work, and it quickly grew into a dedication to building innovative solutions. I believe in continuous learning and sharing knowledge with the community.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section hidden-section">
+            <div class="container">
+                <h2 class="section-heading animate-on-scroll">Get in Touch</h2>
+                <p class="animate-on-scroll">Have a question or just want to say hi? Feel free to reach out!</p>
+                <form class="contact-form animate-on-scroll">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 My Animated Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
